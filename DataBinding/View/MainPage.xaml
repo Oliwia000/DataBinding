@@ -22,7 +22,7 @@
                             <Label Text="{Binding Name}" FontSize="30">
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer
-                                        Command="{Binding Source={x:Reference MainPageRoot}, Path=BindingContext.NavigateToProfileCommand}"
+                                        Command="{Binding Source={x:Reference MainPage}, Path=BindingContext.NavigateToProfileCommand}"
                                         CommandParameter="{Binding Name}" />
                                 </Label.GestureRecognizers>
                             </Label>

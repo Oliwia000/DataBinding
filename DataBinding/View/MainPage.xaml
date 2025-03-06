@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DataBinding.ViewModel"
+             x:Class="DataBinding.MainPage">
+    <ContentPage.BindingContext>
+        <local:MainViewModel>
+        </local:MainViewModel>
+    </ContentPage.BindingContext>
+    
+    <StackLayout Padding="30">
+        <Label Text="Wybierz osobę:" FontSize="50" />
+        <ListView ItemsSource="{Binding People}" SelectionMode="Single">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Label>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={x:Reference MainPage}, Path=BindingContext.ShowPersonCommand}"
+                             CommandParameter="{Binding Name}" />
+                    </Label.GestureRecognizers>
+                    </Label>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

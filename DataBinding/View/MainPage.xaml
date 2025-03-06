@@ -7,23 +7,45 @@
         <local:MainViewModel>
         </local:MainViewModel>
     </ContentPage.BindingContext>
-    
-    <StackLayout Padding="30">
-        <Label Text="Wybierz osobę:" FontSize="50" />
-        <ListView ItemsSource="{Binding People}" SelectionMode="Single">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Label>
-                            <Label.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source={x:Reference MainPage}, Path=BindingContext.ShowPersonCommand}"
-                                CommandParameter="{Binding Name}" />
-                            </Label.GestureRecognizers>
-                        </Label>
-                    </ViewCell>
-                    
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30"
+            Spacing="25">
+            <Label Text="Wybierz osobę:"
+                   FontSize="40"/>
+            <ListView ItemsSource="{Binding People}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Name}" FontSize="25">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer
+                                        Command="{Binding Source={x:Reference MainPageRoot}, Path=BindingContext.NavigateToProfileCommand}"
+                                        CommandParameter="{Binding .}" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        

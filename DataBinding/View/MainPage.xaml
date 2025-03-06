@@ -13,12 +13,15 @@
         <ListView ItemsSource="{Binding People}" SelectionMode="Single">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Label>
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding Source={x:Reference MainPage}, Path=BindingContext.ShowPersonCommand}"
-                             CommandParameter="{Binding Name}" />
-                    </Label.GestureRecognizers>
-                    </Label>
+                    <ViewCell>
+                        <Label>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference MainPage}, Path=BindingContext.ShowPersonCommand}"
+                                CommandParameter="{Binding Name}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </ViewCell>
+                    
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

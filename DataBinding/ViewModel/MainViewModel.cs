@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using DataBinding.ViewModel;
 
 namespace DataBinding.ViewModel
 {
@@ -36,5 +37,6 @@ namespace DataBinding.ViewModel
     public class Person
     {
         public string Name { get; set; }
+
     }
 }

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using DataBinding.ViewModel;
 
+
 namespace DataBinding.ViewModel
 {
 
@@ -21,7 +22,7 @@ namespace DataBinding.ViewModel
         {
             new Person { Name = "Jan Kowalski" },
             new Person { Name = "Anna Nowak" },
-             new Person { Name = "Julia Pomidor" },
+            new Person { Name = "Julia Pomidor" },
             new Person { Name = "Tomasz Kaczyński" }
         };
 

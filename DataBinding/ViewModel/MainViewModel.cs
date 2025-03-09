@@ -8,7 +8,6 @@ namespace DataBinding.ViewModel
     {
         public ObservableCollection<Person> People { get; set; }
         public ICommand ShowPersonCommand { get; }
-
         public MainViewModel()
         {
             People = new ObservableCollection<Person>
@@ -21,7 +20,6 @@ namespace DataBinding.ViewModel
 
             ShowPersonCommand = new Command<string>(ShowPerson);
         }
-
         private async void ShowPerson(string name)
         {
             if (Application.Current?.MainPage != null)
@@ -30,7 +28,6 @@ namespace DataBinding.ViewModel
             }
         }
     }
-
     public class Person
     {
         public string Name { get; set; }
